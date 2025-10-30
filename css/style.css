@@ -1,0 +1,1519 @@
+/*-----------------------------------------------------------------------------------
+
+	Theme Name: Personala
+	Theme URI: http://
+	Description: The Multi-Purpose Onepage Template
+	Author: his7am
+	Author URI: http://themeforest.net/user/his7am
+	Version: 1.0
+
+-----------------------------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+
+	== Table Of Content
+
+		01 Basic
+		02 Buttons
+		03 Navbar
+		04 Header
+		05 Hero
+		06 Resume
+		07 Services
+		08 Numbers
+		09 Portfolio
+		10 Testimonials
+		11 Blog
+		12 Contact
+		13 Footer
+		14 Responsive
+	
+
+---------------------------------------------------------------- */
+/* ----------------------------------------------------------------
+				01 Basic
+-----------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none !important;
+  list-style: none;
+}
+
+body {
+  color: #333;
+  line-height: 1.3;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden !important;
+}
+
+.dark-theme {
+  background: #131414;
+  color: #eee;
+}
+.dark-theme .title:before {
+  background: #222;
+}
+.dark-theme .nav-scroll {
+  background: #181818;
+}
+.dark-theme .nav-scroll .icon-bar {
+  color: #eee;
+}
+.dark-theme .nav-scroll .navbar-nav .nav-link {
+  color: #eee;
+}
+.dark-theme .nav-scroll .logo {
+  color: #fff;
+}
+.dark-theme .nav-scroll .logo:hover {
+  color: #fff;
+}
+.dark-theme .hero .hero-img:after {
+  background: #181818;
+}
+.dark-theme .services .active {
+  border-color: #222;
+}
+.dark-theme .services .active.bolt:before, .dark-theme .services .active.bolt:after {
+  background: #131414;
+}
+.dark-theme .services .bord {
+  border-color: #222;
+}
+.dark-theme .portfolio .item-img-overlay:before, .dark-theme .portfolio .item-img-overlay:after {
+  background: #181818;
+}
+.dark-theme .blog .pitem .content {
+  background: #181818;
+}
+.dark-theme .blog .pitem .content h3 {
+  color: #ccc;
+}
+.dark-theme .blog .pitem .content .more, .dark-theme .blog .pitem .content p {
+  border-color: #222;
+}
+.dark-theme footer {
+  background: #181818;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+p {
+  font-size: 15px;
+  color: #a3a3a3;
+  line-height: 1.6;
+  word-spacing: 1px;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+span, a, a:hover {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  display: inline-block;
+  font-size: 36px;
+  padding-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+.title:after {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background: #C49B66;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 30px);
+}
+.title:before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: rgba(1, 1, 1, 0.05);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.title-left {
+  text-align: left;
+  margin-bottom: 30px;
+}
+.title-left:after {
+  left: 0;
+}
+
+.bg-gray {
+  background: #f7f7f7;
+}
+.bg-gray .title:before {
+  background: #ddd;
+}
+.bg-gray .owl-theme .owl-dots .owl-dot span {
+  background: #777;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.position-re {
+  position: relative;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-img .title:before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-ptb {
+  padding: 80px 0;
+}
+
+.section-pt {
+  padding: 80px 0 0;
+}
+
+.section-pb {
+  padding: 0 0 80px;
+}
+
+.valign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.cd-headline {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+  .cd-headline {
+    font-size: 4.4rem;
+    font-weight: 300;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .cd-headline {
+    font-size: 6rem;
+  }
+}
+.cd-words-wrapper {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.cd-words-wrapper b {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  left: 0;
+  top: 0;
+}
+
+.cd-words-wrapper b.is-visible {
+  position: relative;
+}
+
+.no-js .cd-words-wrapper b {
+  opacity: 0;
+}
+
+.no-js .cd-words-wrapper b.is-visible {
+  opacity: 1;
+}
+
+/* xclip */
+.cd-headline.clip span {
+  display: inline-block;
+  padding: .2em 0;
+}
+
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.cd-headline.clip .cd-words-wrapper::after {
+  /* line */
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 2px;
+  height: 70%;
+  background-color: #aebcb9;
+}
+
+.cd-headline.clip b {
+  opacity: 0;
+}
+
+.cd-headline b.is-visible {
+  opacity: 1;
+  font-weight: 900;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(150, 150, 150, 0.4);
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #C49B66;
+}
+
+/* ----------------------------------------------------------------
+				02 Buttons
+-----------------------------------------------------------------*/
+.buton {
+  position: relative;
+  cursor: pointer;
+}
+.buton button, .buton a {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700;
+  height: 40px;
+  line-height: 40px;
+  width: 130px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.buton button:before, .buton a:before {
+  content: attr(back);
+  font-family: "Font Awesome\ 5 Free";
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  color: #C49B66;
+  border: 1px solid #C49B66;
+  line-height: 38px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transform: translateY(-100%) rotateX(90deg);
+          transform: translateY(-100%) rotateX(90deg);
+}
+.buton button:after, .buton a:after {
+  content: attr(front);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #C49B66;
+  color: #fff;
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: translateY(0) rotateX(0deg);
+          transform: translateY(0) rotateX(0deg);
+}
+.buton button:hover:before, .buton a:hover:before {
+  -webkit-transform: translateY(0) rotateX(0deg);
+          transform: translateY(0) rotateX(0deg);
+}
+.buton button:hover:after, .buton a:hover:after {
+  -webkit-transform: translateY(100%) rotateX(90deg);
+          transform: translateY(100%) rotateX(90deg);
+}
+
+.buton-bord button:before, .buton-bord a:before {
+  background: #C49B66;
+  color: #fff;
+}
+.buton-bord button:after, .buton-bord a:after {
+  background: transparent;
+  color: #C49B66;
+  border: 1px solid #C49B66;
+}
+
+.buton-lg button, .buton-lg a {
+  width: 160px;
+}
+
+.buton-dark button:before, .buton-dark a:before {
+  color: #222;
+  border: 1px solid #222;
+}
+.buton-dark button:after, .buton-dark a:after {
+  background: #222;
+}
+
+/* ----------------------------------------------------------------
+				03 Navbar
+-----------------------------------------------------------------*/
+.navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 9;
+}
+.navbar .icon-bar {
+  color: #fff;
+}
+.navbar .navbar-nav .nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #eee;
+  letter-spacing: .5px;
+  margin: 15px 5px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.navbar .navbar-nav .active {
+  color: #C49B66 !important;
+}
+
+.nav-scroll {
+  background: #fff;
+  border-bottom: 1px solid rgba(12, 12, 12, 0.04);
+  padding: 0;
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+}
+.nav-scroll .icon-bar {
+  color: #222;
+}
+.nav-scroll .navbar-nav .nav-link {
+  color: #222;
+}
+.nav-scroll .logo {
+  padding: 15px 0;
+  color: #111;
+}
+.nav-scroll .logo:hover {
+  color: #111;
+}
+
+.logo {
+  padding: 15px 0;
+  width: 90px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.logo:hover {
+  color: #fff;
+}
+
+/* ----------------------------------------------------------------
+				04 Header
+-----------------------------------------------------------------*/
+.header {
+  min-height: 100vh;
+}
+.header .caption {
+  margin-top: 50px;
+}
+.header .caption h2 {
+  font-weight: 200;
+}
+.header .caption h1 {
+  margin: 10px 0;
+  font-size: 70px;
+}
+.header .arrow {
+  position: absolute;
+  bottom: 5vh;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  z-index: 8;
+}
+.header .arrow i {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+}
+.header .arrow i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+.header .arrow i:hover:after {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+/* ----------------------------------------------------------------
+				05 Hero
+-----------------------------------------------------------------*/
+.hero .hero-img {
+  padding: 0 20px 0 0;
+  position: relative;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.hero .hero-img:hover {
+  padding: 0 0 0 20px;
+}
+.hero .hero-img:hover:after {
+  background: #C49B66;
+  left: 5px;
+  top: -15px;
+  right: 15px;
+  bottom: 15px;
+}
+.hero .hero-img:after {
+  content: '';
+  background: #f5f5f5;
+  position: absolute;
+  left: 15px;
+  right: 5px;
+  top: 15px;
+  bottom: -15px;
+  z-index: -1;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.hero .content p {
+  margin-bottom: 15px;
+}
+.hero .content p span {
+  font-weight: 700;
+}
+.hero .content .social-icon span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid #eee;
+  margin: 15px 5px 15px 0;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.hero .content .social-icon span:hover {
+  background: #C49B66;
+  border-color: #C49B66;
+  color: #fff;
+}
+.hero .content .buton {
+  margin-top: 30px;
+}
+
+/* ----------------------------------------------------------------
+				06 Resume
+-----------------------------------------------------------------*/
+.resume {
+  background-attachment: fixed;
+  padding: 50px 0;
+}
+.resume .title {
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+.resume .item h5 {
+  font-size: 25px;
+  font-weight: 400;
+}
+.resume .item .icon {
+  font-size: 30px;
+  color: #C49B66;
+  margin-bottom: 15px;
+}
+.resume .item li {
+  margin-bottom: 30px;
+}
+.resume .item li:last-child {
+  margin-bottom: 0;
+}
+.resume .item li h6 {
+  color: #eee;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  margin-bottom: 5px;
+}
+.resume .item li p {
+  color: #999;
+}
+.resume .skills .skill {
+  margin-bottom: 30px;
+}
+.resume .skills .skill:last-child {
+  margin-bottom: 0;
+}
+.resume .skills .skill h6 {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.resume .skills .skill h6 span {
+  padding: 4px 8px 0;
+  font-size: 10px;
+  float: right;
+  background: rgba(80, 80, 80, 0.3);
+  position: relative;
+  top: 8px;
+}
+.resume .skills .skill .skills-progress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: rgba(80, 80, 80, 0.3);
+}
+.resume .skills .skill .skills-progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5%;
+  background: #C49B66;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+/* ----------------------------------------------------------------
+				07 Services
+-----------------------------------------------------------------*/
+.services .item {
+  text-align: center;
+  padding: 40px 15px;
+}
+.services .item .icon {
+  font-size: 40px;
+  color: #C49B66;
+  margin-bottom: 30px;
+}
+.services .item h6 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+.services .active {
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
+  position: relative;
+}
+.services .active.bolt:before, .services .active.bolt:after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  bottom: -15px;
+  z-index: 4;
+}
+.services .active.bolt:before {
+  left: -15px;
+}
+.services .active.bolt:after {
+  right: -15px;
+}
+.services .bord {
+  border-bottom: 1px solid #eee;
+}
+
+/* ----------------------------------------------------------------
+				08 Numbers
+-----------------------------------------------------------------*/
+.numbers {
+  padding: 50px 0;
+}
+.numbers .item {
+  text-align: center;
+}
+.numbers .item .icon {
+  font-size: 30px;
+  color: #C49B66;
+  margin-bottom: 30px;
+}
+.numbers .item h2 {
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------------
+				09 Portfolio
+-----------------------------------------------------------------*/
+.portfolio {
+  overflow: hidden;
+}
+.portfolio .filtering span {
+  padding: 8px 20px;
+  margin: 0 5px;
+  color: #777;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.portfolio .filtering .active {
+  color: #fff;
+  background: #C49B66;
+  border-color: #C49B66;
+}
+.portfolio .filtering .active:after {
+  bottom: 0;
+  top: calc(100% - 1px);
+  opacity: 1;
+}
+.portfolio .filtering .active:before {
+  top: 0;
+  opacity: 1;
+}
+.portfolio .items {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+.portfolio .item-img {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio .item-img h5 {
+  font-size: 18px;
+  position: relative;
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  opacity: 0;
+  z-index: 5;
+}
+.portfolio .item-img h6 {
+  color: #C49B66;
+  font-size: 13px;
+  position: relative;
+  margin-bottom: 10px;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  -webkit-transition: all .6s;
+  transition: all .6s;
+  opacity: 0;
+  z-index: 5;
+}
+.portfolio .item-img .link {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #C49B66;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  z-index: 5;
+  opacity: 0;
+}
+.portfolio .item-img-overlay {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  background: transparent;
+  z-index: 2;
+}
+.portfolio .item-img-overlay:before, .portfolio .item-img-overlay:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 50%;
+  background: #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.portfolio .item-img-overlay:before {
+  left: 0;
+  top: 0;
+}
+.portfolio .item-img-overlay:after {
+  right: 0;
+  bottom: 0;
+}
+.portfolio .item-img-overlay:hover:before, .portfolio .item-img-overlay:hover:after {
+  width: 100%;
+}
+.portfolio .item-img-overlay:hover h6, .portfolio .item-img-overlay:hover h5, .portfolio .item-img-overlay:hover .link {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+/* ----------------------------------------------------------------
+				10 Testimonials
+-----------------------------------------------------------------*/
+.testimonials {
+  background-attachment: fixed;
+}
+.testimonials .icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.testimonials .citem p {
+  font-size: 18px;
+  word-spacing: 2px;
+  margin-bottom: 15px;
+}
+.testimonials .citem h5 {
+  font-size: 16px;
+  display: inline-block;
+  padding-right: 10px;
+  margin-right: 10px;
+  position: relative;
+}
+.testimonials .citem h5:after {
+  content: "|";
+  position: absolute;
+  right: -5px;
+  bottom: 4px;
+}
+.testimonials .citem h6 {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+/* ----------------------------------------------------------------
+				11 Blog
+-----------------------------------------------------------------*/
+.blog .owl-carousel .owl-stage-outer {
+  padding: 15px 0;
+}
+.blog .pitem {
+  -webkit-box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 30px -4px rgba(0, 0, 0, 0.1);
+}
+.blog .pitem .post-img {
+  position: relative;
+}
+.blog .pitem .post-img .tag {
+  position: absolute;
+  bottom: -15px;
+  right: 15px;
+  padding: 8px 22px;
+  font-size: 11px;
+  background: #C49B66;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+}
+.blog .pitem .content {
+  padding: 45px 15px 15px;
+  background: #fff;
+}
+.blog .pitem h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 15px;
+}
+.blog .pitem p {
+  font-size: 14px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f7f7f7;
+}
+.blog .pitem .info {
+  padding-top: 15px;
+}
+.blog .pitem .info span {
+  font-size: 12px;
+  color: #999;
+}
+.blog .pitem .info .more {
+  color: #C49B66;
+  border-bottom: 1px solid #eee;
+}
+.blog .pitem .info .by {
+  float: right;
+}
+
+/* ----------------------------------------------------------------
+				12 Contact
+-----------------------------------------------------------------*/
+.contact {
+  background-attachment: fixed;
+}
+.contact .form input[type='text'],
+.contact .form input[type='email'],
+.contact .form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  background: rgba(10, 10, 10, 0.4);
+  color: #fff;
+  margin-bottom: 15px;
+}
+.contact .form textarea {
+  height: 160px;
+  max-height: 160px;
+  max-width: 100%;
+}
+.contact .form button {
+  background: transparent;
+  border: 0;
+}
+.contact .info {
+  margin-top: 50px;
+}
+.contact .info .item .icon {
+  float: left;
+  padding-top: 5px;
+  font-size: 25px;
+  color: #C49B66;
+}
+.contact .info .item .cont {
+  margin-left: 45px;
+  padding-left: 15px;
+  border-left: 1px solid rgba(200, 200, 200, 0.4);
+}
+.contact .info .item .cont h6 {
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------------------
+				13 Footer
+-----------------------------------------------------------------*/
+.footer {
+  padding: 50px 0;
+  background: #111;
+  text-align: center;
+}
+.footer p {
+  font-size: 13px;
+}
+
+/* ----------------------------------------------------------------
+				14 Responsive
+-----------------------------------------------------------------*/
+@media screen and (max-width: 991px) {
+  .mb-md50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-md30 {
+    margin-bottom: 30px;
+  }
+
+  .mb-md0 {
+    margin-bottom: 0;
+  }
+
+  .navbar .navbar-collapse {
+    max-height: 320px;
+    overflow: auto;
+    background: #111;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .navbar .nav-link {
+    margin: 10px auto !important;
+  }
+
+  .nav-scroll .navbar-collapse .nav-link {
+    color: #fff !important;
+  }
+  .nav-scroll .navbar-collapse .active {
+    color: #C49B66 !important;
+  }
+
+  .header .caption h1 {
+    font-size: 50px;
+  }
+
+  .services .item {
+    padding: 0;
+  }
+  .services .active {
+    border: 0;
+  }
+  .services .bord {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mb-sm50 {
+    margin-bottom: 50px;
+  }
+
+  .mb-sm30 {
+    margin-bottom: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+/* added css for the link   */
+
+/* amazon link  */
+
+.item-img-overlay a {
+  position: relative;
+  z-index: 10;
+}
+
+.item-img-overlay {
+  pointer-events: none;
+}
+
+.item-img-overlay a {
+  pointer-events: auto;
+}
+
+/* evangadi forum link  */
+
+.item-img a {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.item-img-overlay {
+  pointer-events: none;
+}
+
+.item-img-overlay * {
+  pointer-events: none;
+}
+
+.item-img a * {
+  pointer-events: auto;
+}
+
+
+ /* adding css to make the garage img bigger  */
+.items .item-img-overlay .link {
+  position: absolute;
+  top: 98%; /* moved further down */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+}
+
+
+
+
+/* add css for removing the percentage   */
+
+
+.resume .item h6 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.resume .item p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.resume .skills .skill {
+  margin-bottom: 20px;
+}
+
+.resume .skills .skills-progress {
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+
+
+
+/* Add spacing between each main resume item (Education, Experience, Skills) */
+.resume .item {
+  background: rgba(255, 255, 255, 0.05); /* subtle background (optional) */
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 40px; /* space between rows on smaller screens */
+  min-height: 100%; /* keep height consistent */
+}
+
+/* Add space between the three columns on larger screens */
+.resume .row > div {
+  margin-bottom: 30px;
+}
+
+/* Make sure content inside each column is nicely spaced */
+.resume .item h5.title {
+  margin-bottom: 20px;
+}
+
+.resume .item ul li {
+  margin-bottom: 15px;
+}
+
+.resume .skills .skill-list li {
+  margin-bottom: 10px;
+}
+
+/* Add some separation between the Education, Experience, and Skills blocks */
+@media (min-width: 992px) {
+  .resume .col-lg-3,
+  .resume .col-lg-6 {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+
+
+/* Global Background for entire website */
+/* body {
+  background-color: #f5f5f5; /* light gray for all sections */
+  /* color: #333333; default text color dark gray */
+  /* font-family: 'Arial', sans-serif; */
+/* }  */
+
+/* Optional: make sections with white cards stand out */
+section {
+  background-color: #fafafa; /* default section background */
+  padding: 60px 0;
+}
+
+/* Portfolio Section Cards */
+.portfolio .item-img {
+  background-color: #ffffff;
+   /* white card for each project */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+/* Resume Section Cards */
+.resume .item {
+  /* background-color: #ffffff;  */
+  /* white card */
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.resume .item:hover {
+  transform: translateY(-5px);
+}
+
+/* General text color */
+h1, h2, h3, h4, h5, h6, p, li, a, span {
+  color:  #ffffff; /* dark gray text for readability */
+}
+
+/* Overlay text on portfolio images stays white */
+.portfolio .overlay-info h6,
+.portfolio .overlay-info h5 {
+  color: #ffffff;
+}
+
+/* Buttons and links */
+a {
+  color: #007bff; /* primary blue for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+
+/* adding css too make the text seen  */
+
+/* === Resume Section Title Styling === */
+/* ===== Title (Education, Experience, My Skills) ===== */
+/* .title-left {
+  color: #000; /* Black text */
+  /* font-weight: 700; /* Bold */
+  /* font-size: 24px; /* Slightly larger for visibility */
+  /* text-transform: uppercase; */
+  /* letter-spacing: 1px; */
+  /* margin-bottom: 20px; */
+  /* position: relative; */
+/* }  */
+
+/* Optional underline accent (modern and clean) */
+/* .title-left::after { */
+  /* content: ""; */
+  /* display: block; */
+  /* width: 50px; */
+  /* height: 3px; */
+  /* background-color: #007bff; Blue accent — change color if desired */
+  /* margin-top: 8px; */
+  /* border-radius: 2px; */
+/* } */
+
+/* Subtitles (like Evangadi Tech Bootcamp) */
+/* .item ul li h6 {
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 5px;
+} */
+
+/* Paragraph text inside each section */
+/* .item ul li p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 15px;
+} */ 
+
+
+
+
+/* adding css img to fit with other  */
+/* Adjust Apple project image size */
+/* Default desktop size */
+/* Default desktop size */
+.portfolio-img {
+  width: 100%;
+  height: 300px; /* base desktop size */
+  object-fit: cover;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Large tablets / small desktops (~900px) */
+@media (max-width: 992px) {
+  .portfolio-img {
+    height: 220px; /* reduce height to fit the column */
+  }
+}
+
+/* Medium tablets */
+@media (max-width: 768px) {
+  .portfolio-img {
+    height: 200px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .portfolio-img {
+    height: 160px;
+  }
+}
+
+/* Overlay icon adjustments */
+.icon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22px;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .icon-center {
+    font-size: 18px; /* scale down for mobile */
+  }
+}
+
+
+
+
+
+/* about page css for making the text black   */
+
+
+/* Make hero section text black */
+.hero .content {
+  color: #000; /* black text */
+}
+
+.hero .content h4.title {
+  color: #000; /* black for title */
+  font-weight: 700; /* make it bold for better visibility */
+}
+
+.hero .content p {
+  color: #000; /* black for paragraphs */
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* Make sure the highlighted span text also looks consistent */
+.hero .content p span {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Optional: adjust social icon color for balance */
+.hero .social-icon .icon i {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.hero .social-icon .icon i:hover {
+  color: #555; /* subtle hover effect */
+}
+
+
+
+
+
+
+
+
+/* addding css for the img to make them the same size and parallel    */
+/* Portfolio Image Fix */
+.portfolio .item-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Make all images uniform */
+.portfolio .item-img img,
+.portfolio .portfolio-img {
+  width: 100%;
+  height: 280px;          /* fixed height for uniformity */
+  object-fit: cover;      /* keeps the aspect ratio and fills evenly */
+  display: block;
+  border-radius: 10px;
+}
+
+/* Align items neatly in horizontal rows */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;              /* space between items */
+}
+
+.gallery .items {
+  flex: 0 1 calc(50% - 20px); /* two items per row on desktop */
+}
+
+@media (max-width: 768px) {
+  .gallery .items {
+    flex: 0 1 100%;  /* one item per row on mobile */
+  }
+}
+
+/* Center overlay elements properly */
+.item-img-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.item-img:hover .item-img-overlay {
+  opacity: 1;
+}
+
+
+
+.portfolio .item-img img,
+.portfolio .portfolio-img {
+  height: 280px;      /* make all images exactly the same height */
+  width: 100%;
+  object-fit: cover;  /* keeps the image centered without distortion */
+  display: block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle; /* keeps them level */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* added css for making the icon biggers  */
+
+
+.social-icon {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  gap: 20px;                 /* space between icons */
+  margin-top: 20px;
+}
+
+.social-icon a {
+  text-decoration: none;
+}
+
+.social-icon .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;               /* icon circle size */
+  height: 50px;
+  border-radius: 50%;        /* makes them circular */
+  background-color: #f5f5f5; /* light background */
+  transition: all 0.3s ease;
+}
+
+.social-icon .icon i {
+  font-size: 24px;           /* icon size — increase this for bigger icons */
+  color: #000;               /* icon color */
+}
+
+.social-icon .icon:hover {
+  background-color: #0077b5; /* LinkedIn blue */
+  transform: scale(1.1);
+}
+
+.social-icon .icon:hover i {
+  color: #fff;
+}
+
+
+.social-icon {
+  display: flex;
+  justify-content: flex-start;  /* aligns them to the left */
+  gap: 20px;                    /* space between icons */
+  margin-top: 20px;
+  margin-left: 50px;            /* adjust this value to move them more/less left */
+}
+
+.social-icon a {
+  text-decoration: none;
+}
+
+.social-icon .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.social-icon .icon i {
+  font-size: 24px;
+  color: #000;
+}
+
+.social-icon .icon:hover {
+  background-color: #0077b5;
+  transform: scale(1.1);
+}
+
+.social-icon .icon:hover i {
+  color: #fff;
+}
+
+
+
+/* changing the text color to black on portfolio  */
+
+.portfolio {
+  color: black;
+}
+
+.portfolio .title,
+.portfolio span,
+.portfolio h4,
+.portfolio h5,
+.portfolio h6,
+.portfolio p {
+  color: black !important;
+}
